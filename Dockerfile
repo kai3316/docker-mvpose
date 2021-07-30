@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y python3.6 python3.6-dev
 
 RUN apt-get install -y git
 
-RUN git clone https://github.com/zju3dv/mvpose.git
+RUN git clone https://github.com/kai3316/mvpose.git
 
 RUN apt-get install -y python3-pip && python3.6 -m pip install --upgrade pip
 
