@@ -27,7 +27,7 @@ RUN sed -i -- 's=cuda/include/cuda.h=cuda.h=g' /usr/local/lib/python3.6/dist-pac
 RUN sed -i -- 's=cuda/include/cuda_fp16.h=cuda_fp16.h=g' /usr/local/lib/python3.6/dist-packages/tensorflow/include/tensorflow/core/util/cuda_kernel_helper.h
 
 # run the following on entry:
-RUN cd mvpose/backend/light_head_rcnn/lib/ && bash make.sh
+# RUN cd mvpose/backend/light_head_rcnn/lib/ && bash make.sh
 RUN sed -i -- 's=from Cython.Distutils import build_ext=from Cython.Distutils import build_ext\nimport numpy=g' /mvpose/src/m_lib/setup.py
 RUN sed -i -- 's~\["pictorial.pyx"\],~["pictorial.pyx"],\ninclude_dirs=[numpy.get_include()],~g' /mvpose/src/m_lib/setup.py
 RUN cd mvpose/src/m_lib && python3 setup.py build_ext --inplace
