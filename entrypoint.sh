@@ -4,6 +4,9 @@ set -e
 if [ "$1" = 'bash' ]; then
   cd mvpose/backend/light_head_rcnn/lib/ && bash make.sh
 fi
+if [ "$1" = '/bin/bash' ]; then
+  cd mvpose/backend/light_head_rcnn/lib/ && bash make.sh
+fi
 
 cd /mvpose
 
